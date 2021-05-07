@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectConnect.Network.ResponseDto
+namespace Network.ResponseDto
 {
     [Serializable]
     public class UserGetResponseDto : DtoBase

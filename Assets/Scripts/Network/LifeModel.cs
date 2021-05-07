@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectConnect.Network
+namespace Network
 {
     [Serializable]
     public class LifeModel : DtoBase

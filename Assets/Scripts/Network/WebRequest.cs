@@ -2,13 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectConnect.Network.RequestDto;
-using ProjectConnect.Network.ResponseDto;
+using Network.RequestDto;
+using Network.ResponseDto;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Networking;
 
-namespace ProjectConnect.Network
+namespace Network
 {
     /// <summary>
     /// 通信するための最低限の処理を行うクラス

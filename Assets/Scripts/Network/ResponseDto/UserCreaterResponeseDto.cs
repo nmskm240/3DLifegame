@@ -1,4 +1,4 @@
-namespace ProjectConnect.Network.ResponseDto
+namespace Network.ResponseDto
 {
     public class UserCreateResponseDto : DtoBase
     {

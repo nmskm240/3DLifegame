@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace ProjectConnect.Network
+namespace Network
 {
     /// <summary>
     /// Dtoのベースクラス

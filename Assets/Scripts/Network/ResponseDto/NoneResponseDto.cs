@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ProjectConnect.Network.ResponseDto
+namespace Network.ResponseDto
 {
     /// <summary>
     /// レスポンスがない通信用に使用するDto

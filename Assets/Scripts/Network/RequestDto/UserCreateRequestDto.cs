@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectConnect.Network.RequestDto
+namespace Network.RequestDto
 {
     [Serializable]
     public class UserCreateRequestDto : DtoBase
