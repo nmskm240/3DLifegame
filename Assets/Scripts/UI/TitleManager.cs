@@ -23,7 +23,7 @@ namespace UI
                 StartCoroutine(NetworkManager.Instance.WebRequest.Post<UserCreateRequestDto, UserCreateResponseDto>(url, request, response =>
                 {
                     NetworkManager.Instance.WebRequest.SetToken(response.token);
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Menu");
                 }, Debug.LogError));
             });
         }
