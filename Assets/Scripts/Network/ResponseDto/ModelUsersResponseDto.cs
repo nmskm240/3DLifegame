@@ -5,6 +5,6 @@ namespace Network.ResponseDto
     [Serializable]
     public class ModelUsersResponseDto : DtoBase
     {
-        public LifeModel[] life_model;
+        public LifeModel[] life_model_list;
     }
 }

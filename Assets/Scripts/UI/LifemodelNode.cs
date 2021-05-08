@@ -21,6 +21,13 @@ namespace UI
             _name.text = model.name;
         }
 
+        public void Init(LifeModel model)
+        {
+            _model = model;
+            _rank.text = "";
+            _name.text = model.name;
+        }
+
         public void OnPointerClick(PointerEventData e)
         {
             Debug.Log(_model.ToJson());

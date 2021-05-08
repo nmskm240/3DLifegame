@@ -44,7 +44,7 @@ public class NetworkManager : SingletonMonoBehaviour<NetworkManager>
                 return "/model/ranking";
 
             case MethodType.GetModelUser:
-                return "/model/user";
+                return "/model/users";
         }
 
         return null;
