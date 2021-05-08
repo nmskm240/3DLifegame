@@ -3,7 +3,7 @@ public enum MethodType
     PostUserCreate,
 
     PostModelCreate,
-//  PostModelFavorite,
+    PostModelFavorite,
         
         // Getメソッド系
 
