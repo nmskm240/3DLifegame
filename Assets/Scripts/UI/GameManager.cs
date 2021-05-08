@@ -42,7 +42,7 @@ namespace UI
             _reset.onClick.AddListener(() => 
             {
                 if(_process != null){ StopCoroutine(_process); }
-                _stage.Create(10,10,10,500);
+                _stage.Create(500);
                 _play.interactable = true;
                 _pause.interactable = true;
             });

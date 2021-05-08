@@ -13,13 +13,13 @@ namespace Lifegame
         public float FrameDuration;
         public bool IsPause = false;
         public Cell[,,] Map { get { return _map; } }
-        public int Width { get; private set; }
-        public int Height { get; private set; }
-        public int Length { get; private set; }
+        public int Width { get; private set; } = 10;
+        public int Height { get; private set; } = 10;
+        public int Length { get; private set; } = 10;
 
         private void Awake() 
         {
-            Create(10,10,10,500);
+            Create(500);
         }
 
         private void OnTransformChildrenChanged() 
@@ -48,11 +48,8 @@ namespace Lifegame
             }
         }
 
-        public void Create(int width, int height, int length, int alivers)
+        public void Create(int alivers)
         {
-            Width = width;
-            Height = height;
-            Length = length;
             Setup();
             RandomAlive(alivers);
             foreach (var cell in _map)
