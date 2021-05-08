@@ -11,10 +11,10 @@ public class CameraWork : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKey(KeyCode.W)) Move(Direction.Up);
-        else if(Input.GetKey(KeyCode.A)) Move(Direction.Left);
-        else if(Input.GetKey(KeyCode.S)) Move(Direction.Down);
-        else if(Input.GetKey(KeyCode.D)) Move(Direction.Right);
+        if(Input.GetKey(KeyCode.W)) Move(Direction.Right);
+        else if(Input.GetKey(KeyCode.A)) Move(Direction.Down);
+        else if(Input.GetKey(KeyCode.S)) Move(Direction.Left);
+        else if(Input.GetKey(KeyCode.D)) Move(Direction.Up);
     }
 
     public void Move(Direction direction)

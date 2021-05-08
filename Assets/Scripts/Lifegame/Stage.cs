@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Lifegame.Rules;
 
 namespace Lifegame
 {    
@@ -8,10 +9,18 @@ namespace Lifegame
     {
         private Cell[,,] _map;
 
+        public IRule Rule;
+        public float FrameDuration;
+        public bool IsPause = false;
         public Cell[,,] Map { get { return _map; } }
         public int Width { get; private set; }
         public int Height { get; private set; }
         public int Length { get; private set; }
+
+        private void Awake() 
+        {
+            Create(10,10,10,500);
+        }
 
         private void OnTransformChildrenChanged() 
         {
@@ -19,6 +28,23 @@ namespace Lifegame
             {
                 var cell = tf.gameObject.GetComponent<Cell>();
                 tf.localPosition = new Vector3(cell.Pos.x, cell.Pos.y, cell.Pos.z);
+            }
+        }
+
+        public IEnumerator Play()
+        {
+            while(true)
+            {
+                yield return new WaitWhile(() => IsPause);
+                foreach(var cell in Map)
+                {
+                    cell.SetNextAlive(Rule);
+                }
+                yield return new WaitForSeconds(FrameDuration);
+                foreach(var cell in Map)
+                {
+                    cell.Next();
+                }
             }
         }
 
