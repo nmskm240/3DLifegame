@@ -19,8 +19,6 @@ namespace UI
         private Button _pause;
         [SerializeField]
         private Button _reset;
-        [SerializeField]
-        private Button _save;
 
         private Coroutine _process = null;
 
@@ -45,30 +43,6 @@ namespace UI
                 _stage.Create(500);
                 _play.interactable = true;
                 _pause.interactable = true;
-            });
-            _save.onClick.AddListener(() => 
-            {
-                var map = new int[_stage.Width * _stage.Height * _stage.Length];
-                var url = NetworkManager.Instance.GetMethod(MethodType.PostModelCreate);
-                var tmp = 0;
-                foreach(var cell in _stage.Map)
-                {
-                    map[tmp] = Convert.ToInt32(cell.IsAlive);
-                }
-                var request = new CreateLifeModelRequestDto()
-                {
-                    name = "test map",
-                    map = map,
-                };
-                StartCoroutine(NetworkManager.Instance.WebRequest.Post<CreateLifeModelRequestDto, NoneResponseDto>(url, request, x =>
-                {
-                    SceneManager.LoadScene("Menu");
-                }, error =>
-                {
-                    var factory = new DialogFactory();
-                    var dialog = factory.Create().GetComponent<Dialog>();
-                    dialog.Show(DialogType.AgreeOnly, error);
-                }, true));
             });
         }
     }
