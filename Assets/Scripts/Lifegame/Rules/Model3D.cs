@@ -4,9 +4,7 @@ using Lifegame;
 
 namespace Lifegame.Rules
 {
-    //ルール
-    //自分の周りの生きてる数が偶数か奇数かで生死を判断
-    public class Model3Da : IRule
+    public class Model3D : IRule
     {
         public bool NextAlive(Cell cell)
         {
@@ -21,7 +19,7 @@ namespace Lifegame.Rules
             }
             else
             {
-                return (count % 2 == 1);
+                return (count % 2 == 0);
             }
         }
     }

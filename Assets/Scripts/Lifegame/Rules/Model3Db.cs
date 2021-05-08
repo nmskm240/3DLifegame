@@ -5,8 +5,10 @@ using Lifegame;
 namespace Lifegame.Rules
 {
     //ルール
-    //自分の周りの生きてる数が偶数か奇数かで生死を判断
-    public class Model3Da : IRule
+    //自分の周りで9つ以上死んでいるとき
+    //生きてるとき　->　2つから4つが生きていれば生存
+    //死んでるとき　->　5～8個生存していた場合生成
+    public class Model3Db : IRule
     {
         public bool NextAlive(Cell cell)
         {
@@ -17,11 +19,11 @@ namespace Lifegame.Rules
             }
             if(cell.IsAlive)
             {
-                return (count % 2 == 0);
+                return (2<=count && count<=4);
             }
             else
             {
-                return (count % 2 == 1);
+                return (4<count && count<9);
             }
         }
     }
