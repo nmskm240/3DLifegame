@@ -7,6 +7,9 @@ namespace Lifegame
 {    
     public class Stage : MonoBehaviour 
     {
+        [SerializeField]
+        private LoadStageData _loadData;
+
         private float _cellsInterval = 1f;
         private Cell[,,] _map;
 
@@ -30,6 +33,17 @@ namespace Lifegame
         private void Awake() 
         {
             Create(500);
+            if(_loadData.LifeModel != null)
+            {
+                var cursor = 0;
+                var map = _loadData.LifeModel.map;
+                foreach(var cell in _map)
+                {
+                    cell.IsAlive = map[cursor] == '1' ? true : false;
+                    cursor++;
+                }
+                _loadData.Reset();
+            }
         }
 
         private void OnTransformChildrenChanged() 

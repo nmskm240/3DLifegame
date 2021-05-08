@@ -48,16 +48,12 @@ namespace UI
             });
             _save.onClick.AddListener(() => 
             {
-                var map = new int[4000];
+                var map = new int[_stage.Width * _stage.Height * _stage.Length];
                 var url = NetworkManager.Instance.GetMethod(MethodType.PostModelCreate);
                 var tmp = 0;
                 foreach(var cell in _stage.Map)
                 {
-                    map[tmp] = (int)cell.Pos.x;
-                    map[tmp + 1] = (int)cell.Pos.y;
-                    map[tmp + 2] = (int)cell.Pos.z;
-                    map[tmp + 3] = Convert.ToInt32(cell.IsAlive);
-                    tmp += 4;
+                    map[tmp] = Convert.ToInt32(cell.IsAlive);
                 }
                 var request = new CreateLifeModelRequestDto()
                 {

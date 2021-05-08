@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rank: {fileID: 1321606402037216279}
   _name: {fileID: 1540549337692960534}
+  _out: {fileID: 11400000, guid: 8cbb18b6494803c4d94e9add25d5f5a0, type: 2}
 --- !u!1 &6771383785035929492
 GameObject:
   m_ObjectHideFlags: 0

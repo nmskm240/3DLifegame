@@ -11,6 +11,8 @@ namespace UI
         private TextMeshProUGUI _rank;
         [SerializeField]
         private TextMeshProUGUI _name;
+        [SerializeField]
+        private LoadStageData _out;
 
         private LifeModel _model;
 
@@ -30,7 +32,7 @@ namespace UI
 
         public void OnPointerClick(PointerEventData e)
         {
-            Debug.Log(_model.ToJson());
+            _out.Copy(_model);
         }
     }
 }

@@ -2325,6 +2325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb5c4d2a8d47084ebbe3b193fa8b610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadData: {fileID: 11400000, guid: 8cbb18b6494803c4d94e9add25d5f5a0, type: 2}
   FrameDuration: 0
   IsPause: 0
 --- !u!1 &908372049
