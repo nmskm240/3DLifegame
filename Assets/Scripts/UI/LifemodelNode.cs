@@ -5,7 +5,7 @@ using Network;
 
 namespace UI
 {    
-    public class RankingNode : MonoBehaviour, IPointerClickHandler 
+    public class LifemodelNode : MonoBehaviour, IPointerClickHandler 
     {
         [SerializeField]
         private TextMeshProUGUI _rank;

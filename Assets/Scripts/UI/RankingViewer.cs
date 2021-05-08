@@ -4,7 +4,7 @@ using Network;
 using Network.RequestDto;
 using Network.ResponseDto;
 
-namespace UI.Ranking
+namespace UI
 {
     public class RankingViewer : MonoBehaviour
     {
@@ -32,11 +32,11 @@ namespace UI.Ranking
             StartCoroutine(NetworkManager.Instance.WebRequest.Get<RankingLifeModelResponseDto>(url, response =>
             {
                 var rank = 1;
-                var factory = new RankingNodeFactory();
+                var factory = new LifemodelNodeFactory();
                 foreach (var model in response.life_model_list)
                 {
                     var obj = factory.Create();
-                    var node = obj.GetComponent<RankingNode>();
+                    var node = obj.GetComponent<LifemodelNode>();
                     node.Init(rank++, model);
                     obj.transform.SetParent(_contents);
                     obj.transform.localScale = Vector3.one;
