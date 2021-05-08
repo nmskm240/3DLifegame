@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using TMPro;
 using Network;
 
@@ -33,6 +34,7 @@ namespace UI
         public void OnPointerClick(PointerEventData e)
         {
             _out.Copy(_model);
+            SceneManager.LoadScene("LifeModelInfo");
         }
     }
 }

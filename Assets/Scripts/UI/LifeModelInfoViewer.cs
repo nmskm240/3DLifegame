@@ -13,6 +13,8 @@ namespace UI
         [SerializeField]
         private Button _close;
         [SerializeField]
+        private Button _play;
+        [SerializeField]
         private LoadStageData _loadData;
 
         private void Awake() 
@@ -24,7 +26,12 @@ namespace UI
                 + "favorite" + lifemodel.favorite;
             _close.onClick.AddListener(() => 
             {
+                _loadData.Reset();
                 SceneManager.LoadScene("Menu");
+            });
+            _play.onClick.AddListener(() => 
+            {
+                SceneManager.LoadScene("Game");
             });
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NetworkManager : SingletonMonoBehaviour<NetworkManager>
 {
-    private const string ServerAddress = "http://lifegame-3d.herokuapp.com"; //ここが変わる
+    private const string ServerAddress = "https://lifegame-3d.herokuapp.com"; //ここが変わる
     private WebRequest _webRequest = new WebRequest();
 
     public WebRequest WebRequest{ get { return _webRequest; } } 
