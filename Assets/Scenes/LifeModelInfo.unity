@@ -1292,7 +1292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _main: {fileID: 1031286576}
   _close: {fileID: 389845281}
-  _play: {fileID: 0}
+  _play: {fileID: 868477132}
+  _favorite: {fileID: 1198744122}
   _loadData: {fileID: 11400000, guid: 8cbb18b6494803c4d94e9add25d5f5a0, type: 2}
 --- !u!114 &1329744311
 MonoBehaviour:
