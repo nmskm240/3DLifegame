@@ -10,8 +10,6 @@ namespace UI
         private Button _createModel;
         [SerializeField]
         private Button _ranking;
-        [SerializeField]
-        private Ranking.RankingViewer _rankingViewer;
 
         private void Awake()
         {
@@ -21,7 +19,7 @@ namespace UI
             });
             _ranking.onClick.AddListener(() =>
             {
-                _rankingViewer.Show();
+                SceneManager.LoadScene("Ranking");
             });
         }
     }

@@ -15,20 +15,19 @@ namespace UI.Ranking
 
         private void Awake()
         {
-            gameObject.SetActive(false);
             _close.onClick.AddListener(() =>
             {
                 gameObject.SetActive(false);
             });
+            Show();
         }
 
-        public void Show()
+        private void Show()
         {
             foreach (Transform tf in _contents)
             {
                 Destroy(tf.gameObject);
             }
-            gameObject.SetActive(true);
             var url = NetworkManager.Instance.GetMethod(MethodType.GetRanking);
             StartCoroutine(NetworkManager.Instance.WebRequest.Get<RankingLifeModelResponseDto>(url, response =>
             {

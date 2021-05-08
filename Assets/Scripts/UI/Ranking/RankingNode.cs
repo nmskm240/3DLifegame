@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 using Network;
 
 namespace UI.Ranking
 {    
-    public class RankingNode : MonoBehaviour 
+    public class RankingNode : MonoBehaviour, IPointerClickHandler 
     {
         [SerializeField]
         private TextMeshProUGUI _rank;
@@ -18,6 +19,11 @@ namespace UI.Ranking
             _model = model;
             _rank.text = rank.ToString();
             _name.text = model.name;
+        }
+
+        public void OnPointerClick(PointerEventData e)
+        {
+            
         }
     }
 }
