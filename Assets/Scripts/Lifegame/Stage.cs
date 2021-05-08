@@ -7,11 +7,21 @@ namespace Lifegame
 {    
     public class Stage : MonoBehaviour 
     {
+        private float _cellsInterval = 1f;
         private Cell[,,] _map;
 
         public IRule Rule;
         public float FrameDuration;
         public bool IsPause = false;
+        public float CellsInterval
+        { 
+            get{ return _cellsInterval; } 
+            set
+            {
+                _cellsInterval = value;
+                OnTransformChildrenChanged();
+            } 
+        }
         public Cell[,,] Map { get { return _map; } }
         public int Width { get; private set; } = 10;
         public int Height { get; private set; } = 10;
@@ -27,7 +37,7 @@ namespace Lifegame
             foreach(Transform tf in transform)
             {
                 var cell = tf.gameObject.GetComponent<Cell>();
-                tf.localPosition = new Vector3(cell.Pos.x, cell.Pos.y, cell.Pos.z);
+                tf.localPosition = new Vector3(cell.Pos.x, cell.Pos.y, cell.Pos.z) * _cellsInterval;
             }
         }
 
