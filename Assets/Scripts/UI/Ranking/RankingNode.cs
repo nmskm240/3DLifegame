@@ -23,7 +23,7 @@ namespace UI.Ranking
 
         public void OnPointerClick(PointerEventData e)
         {
-            
+            Debug.Log(_model.ToJson());
         }
     }
 }

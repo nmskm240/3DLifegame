@@ -41,6 +41,11 @@ namespace UI.Ranking
                     obj.transform.SetParent(_contents);
                     obj.transform.localScale = Vector3.one;
                 }
+            },error =>
+            {
+                var factory = new DialogFactory();
+                var dialog = factory.Create().GetComponent<Dialog>();
+                dialog.Show(DialogType.AgreeOnly, error);
             }));
         }
     }

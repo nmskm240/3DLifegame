@@ -67,7 +67,12 @@ namespace UI
                 StartCoroutine(NetworkManager.Instance.WebRequest.Post<CreateLifeModelRequestDto, NoneResponseDto>(url, request, x =>
                 {
                     SceneManager.LoadScene("Menu");
-                }, Debug.LogError, true));
+                }, error =>
+                {
+                    var factory = new DialogFactory();
+                    var dialog = factory.Create().GetComponent<Dialog>();
+                    dialog.Show(DialogType.AgreeOnly, error);
+                }, true));
             });
         }
     }

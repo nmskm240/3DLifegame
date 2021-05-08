@@ -32,7 +32,15 @@ namespace UI
                     StartCoroutine(NetworkManager.Instance.WebRequest.Get<UserGetResponseDto>(url, response =>
                     {
                         SceneManager.LoadScene("Menu");
-                    }, error => { CreateUser(); }));
+                    }, error => 
+                    {
+                        var factory = new DialogFactory();
+                        var dialog = factory.Create().GetComponent<Dialog>();
+                        dialog.Show(DialogType.AgreeOnly, error);
+                        _inputField.interactable = true;
+                        _startButton.onClick.RemoveAllListeners();
+                        _startButton.onClick.AddListener(() => { CreateUser(); });
+                    }));
                 }
                 else
                 {

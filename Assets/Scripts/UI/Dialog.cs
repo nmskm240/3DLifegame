@@ -18,7 +18,7 @@ namespace UI
             gameObject.SetActive(false);
         }
 
-        public void Show(DialogType type, string text, Action<string> onAgree, Action<string> onDisAgree = null)
+        public void Show(DialogType type, string text, Action<string> onAgree = null, Action<string> onDisAgree = null)
         {
             var agree = _agree.GetComponent<Button>();
             var disAgree = _disAgree.GetComponent<Button>();
