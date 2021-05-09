@@ -42,7 +42,7 @@ namespace UI
                 {
                     var factory = new DialogFactory();
                     var dialog = factory.Create().GetComponent<Dialog>();
-                    dialog.Show(DialogType.AgreeOnly, error);
+                    dialog.Show(DialogType.Error, error);
                 }, true));
             });    
         }

@@ -1,13 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace UI
 {    
     public class Dialog : MonoBehaviour 
     {
         [SerializeField]
-        private Text _body;
+        private TextMeshProUGUI _title;
+        [SerializeField]
+        private TextMeshProUGUI _body;
         [SerializeField]
         private GameObject _agree;
         [SerializeField]
@@ -22,6 +25,7 @@ namespace UI
         {
             var agree = _agree.GetComponent<Button>();
             var disAgree = _disAgree.GetComponent<Button>();
+            _title.text = (type == DialogType.Error) ? "ERROR" : "";
             _body.text = text;
             agree.onClick.AddListener(() => onAgree?.Invoke(null));
             agree.onClick.AddListener(() => { Destroy(gameObject); });

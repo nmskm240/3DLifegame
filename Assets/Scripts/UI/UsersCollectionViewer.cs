@@ -16,10 +16,10 @@ namespace UI
 
         private void Awake() 
         {
-            var factory = new LifemodelNodeFactory();
             var url = NetworkManager.Instance.GetMethod(MethodType.GetModelUser);
             StartCoroutine(NetworkManager.Instance.WebRequest.Get<ModelUsersResponseDto>(url, response =>
             {
+                var factory = new LifemodelNodeFactory();
                 foreach(var model in response.life_model_list)
                 {
                     var obj = factory.Create();
@@ -28,6 +28,11 @@ namespace UI
                     obj.transform.SetParent(_contents);
                     obj.transform.localScale = Vector3.one;
                 }
+            }, error =>
+            {
+                var factory = new DialogFactory();
+                var dialog = factory.Create().GetComponent<Dialog>();
+                dialog.Show(DialogType.Error, error);
             }));
             _close.onClick.AddListener(() => 
             {

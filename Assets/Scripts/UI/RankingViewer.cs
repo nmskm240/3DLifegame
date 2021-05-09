@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Network;
 using Network.RequestDto;
 using Network.ResponseDto;
@@ -17,7 +18,7 @@ namespace UI
         {
             _close.onClick.AddListener(() =>
             {
-                gameObject.SetActive(false);
+                SceneManager.LoadScene("Menu");
             });
             Show();
         }
@@ -45,7 +46,7 @@ namespace UI
             {
                 var factory = new DialogFactory();
                 var dialog = factory.Create().GetComponent<Dialog>();
-                dialog.Show(DialogType.AgreeOnly, error);
+                dialog.Show(DialogType.Error, error);
             }));
         }
     }
