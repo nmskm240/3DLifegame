@@ -4,5 +4,6 @@ namespace UI
     {
         AgreeOnly,
         Switch,
+        Error,
     }
 }

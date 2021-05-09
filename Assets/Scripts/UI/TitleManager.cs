@@ -36,7 +36,7 @@ namespace UI
                     {
                         var factory = new DialogFactory();
                         var dialog = factory.Create().GetComponent<Dialog>();
-                        dialog.Show(DialogType.AgreeOnly, error);
+                        dialog.Show(DialogType.Error, error);
                         _inputField.interactable = true;
                         _startButton.onClick.RemoveAllListeners();
                         _startButton.onClick.AddListener(() => { CreateUser(); });
