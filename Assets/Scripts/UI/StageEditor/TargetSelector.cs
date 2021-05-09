@@ -35,6 +35,11 @@ namespace UI.StageEditor
             });
         }
 
+        private void Start()
+        {
+            TargetSelect();
+        }
+
         private void TargetSelect()
         {
             var stage = GameObject.Find("Stage").GetComponent<Stage>();

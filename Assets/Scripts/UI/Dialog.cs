@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace UI
 {    
     public class Dialog : MonoBehaviour 
     {
         [SerializeField]
-        private Text _body;
+        private TextMeshProUGUI _body;
         [SerializeField]
         private GameObject _agree;
         [SerializeField]
