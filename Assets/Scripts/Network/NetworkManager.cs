@@ -37,8 +37,8 @@ public class NetworkManager : SingletonMonoBehaviour<NetworkManager>
             case MethodType.GetModel:
                 return "/model/get";
             
-//            case MethodType.PostModelFavorite:
-//                return "/model/favorite";
+           case MethodType.PostModelFavorite:
+               return "/model/favorite";
             
             case MethodType.GetRanking:
                 return "/model/ranking";
